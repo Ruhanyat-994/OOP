@@ -1,8 +1,15 @@
-# OOP Lab class 1
+# OOP Lab Class 1
 
-> **Online & Lab Performance > (n-1) will be counted.01**  
-> **CT > (n-1) will be counted.**   
-> **Assignment 2 will be counted and given as well.**
+## Evaluation Criteria
+
+- **Online & Lab Performance**
+  - \( (n-1) \) best performances will be considered.
+
+- **Class Tests (CT)**
+  - \( (n-1) \) best test scores will be considered.
+
+- **Assignments**
+  - Assignment 2 will be evaluated and counted.
 
 ### Difference Between Structure and Object
 
@@ -46,10 +53,15 @@ public static void main(String[] args) {
 }
 ```
 - **public**: This is an access modifier. When a method is declared as `public`, it means that the method can be called from outside the class.
+
 - **static**: This keyword indicates that the method belongs to the class, rather than an instance of the class. This means you can call the `main` method without creating an object of the class.
+  
 - **void**: This means that the method does not return any value.
+  
 - **main**: This is the name of the method. The `main` method is special in Java because it is the entry point for the application. When you run a Java program, the JVM looks for the `main` method to start execution.
+  
 - **String[] args**: This is an array of `String` objects. It stores command-line arguments that can be passed to the program when it is executed.
+  
 - **System.out.println("Hello world")**: This line prints the string "Hello world" to the standard output, which is typically the console. 
   - **System**: This is a class from the `java.lang` package.
   - **out**: This is a static member of the `System` class, which is an instance of `PrintStream`. It represents the standard output stream.
