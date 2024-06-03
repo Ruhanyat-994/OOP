@@ -93,7 +93,7 @@ public class lab_class1 {
 ------------------------------------------------
 3. After the public class we can just type psvm and the void main will be automated
 
-4. Function is called as Method in JAVA.
+4. Function is called as Method (A method is a function which is a part of a class )in JAVA.
 5.  System.out.println(); // This is just a Print function here called as method.
 ```
 
