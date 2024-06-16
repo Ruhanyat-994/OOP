@@ -473,3 +473,133 @@ public class Main {
     }
 }
 ```
+
+**->** **When there is a string to convert to integer we can use "Integer.parseInt(var_name)"**
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Implicit Casting
+        // byte > short > int > long
+        String x="5";
+        int y = Integer.parseInt(x)+9;
+
+        System.out.println(y);
+    }
+}
+```
+**->** **When there is a string to convert to double we can use " Double.parseDouble(var_name)"**
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Implicit Casting
+        // byte > short > int > long
+        String x="5.6";
+        double y = Double.parseDouble(x)+9;
+
+        System.out.println(y);
+    }
+}
+```
+
+## Math Class
+1. **We can use the math class like we used in C**
+2. **We can give a round figure to a floating point number to an integer and a double to long**
+
+```java
+public class Main{
+    public static void main(String[] args){
+
+       int result = Math.round(1.1F);
+       System.out.println(result);
+    }
+}
+```
+3. **We can also use ceiling i means it will give the closest greater int**
+```java
+public class Main{
+    public static void main(String[] args){
+
+       int result =(int)Math.ceil(1.1F); // we are using implicit int for casting the double to int
+       System.out.println(result);
+    }
+}
+```
+**Output:**
+```sh
+2
+```
+4. **Some usefull methods are:**  
+    - **Math.floor()**
+    - **Math.max()** ~This is for checking which is the bigger value 
+    - **Math.random()** ~ This is for generating random values but it is in "Double!" but its in between 0-1
+
+    - **Math.random()x100** ~ This will give 1-100 random numbers
+    - **Math.round(Math.random())** ~ this will give a round figure every time  
+        - Example:
+
+```java
+            public class Main{
+    public static void main(String[] args){
+
+        int  result =(int)Math.round(Math.random()*100); // we are using implicit int for casting the double to int
+        System.out.println(result);
+    }
+}
+```
+## Formating Numbers
+- **There are many class in java which are abstract so we can't instantiate them with "new". Those are like half baked cake**
+
+#### Formating numbers as Currency
+```java
+import java.text.NumberFormat;
+
+public class Main{
+    public static void main(String[] args){
+
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String result = currency.format(1665468.1649);
+        System.out.println(result);
+    }
+}
+```
+**Output:**
+```sh
+$1,665,468.16
+```
+- **Give us a string representation of the value that we have given**
+
+#### Formating numbers as Percent
+```java
+import java.text.NumberFormat;
+
+public class Main{
+    public static void main(String[] args){
+
+        NumberFormat percent = NumberFormat.getPercentInstance();
+        String result = percent.format(0.56);
+        System.out.println(result);
+    }
+}
+```
+**Output:**
+```sh
+56%
+```
+#### Chaining Multiple Methods Togather
+```java
+import java.text.NumberFormat;
+
+public class Main{
+    public static void main(String[] args){
+
+        String result = NumberFormat.getPercentInstance().format(.56);
+        
+        System.out.println(result);
+    }
+}
+```
+**Output:**
+```sh
+56%
+```
