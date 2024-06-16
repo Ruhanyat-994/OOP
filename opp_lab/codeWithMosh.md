@@ -35,7 +35,7 @@ public class Main {
     }
 }
 ```
-- We are using a Builtin class that is Data and while using its instance or object we are using "new" to initiate the variable and that is the main difference between primitive and reference.
+- We are using a Builtin class that is Date and while using its instance or object we are using "new" to initiate the variable and that is the main difference between primitive and reference.
 
 ### Primitive Type VS Reference Type
 #### Primitive
@@ -90,6 +90,27 @@ java.awt.Point[x=2,y=1]
 ```
 
 - Because reference types are copied by their refereces and primitives are copied by their values
+```java
+import java.awt.*;
+
+public class Main {
+    public static void main(String[] args) {
+        Point point1 = new Point(5,6);
+        Point point2 = new Point(7,8);
+        point2.x = 8;
+        point1.y = 9;
+        System.out.println(point2+" "+point1);
+
+
+    }
+}
+```
+```sh
+java.awt.Point[x=8,y=8] java.awt.Point[x=5,y=9]
+
+Process finished with exit code 0
+
+```
 
 ## Strings
 ```java
@@ -174,6 +195,10 @@ public class Main {
    - Returns a new string that is a substring of this string starting from the specified index up to, but not including, the specified end index.
    ```java
    String sub = str.substring(7, 12); // "World"
+   ```
+   ```sh
+   1. BeginIndex will be the first index
+   2. endIndex will be = endIndex + 1 
    ```
 
 7. **toUpperCase()**
@@ -298,7 +323,7 @@ public class Main {
     }
 }
 ```
-```plaintext
+```sh
 [I@7b23ec81
 ```
 - its just printing the the address of the array
@@ -347,4 +372,104 @@ public class Main {
 ```plaintext
 9
 [2, 2, 3, 4, 4, 5, 5, 6, 34]
+```
+
+## Multi Dimentional Array
+
+### Two Dimentional 
+```java
+import java.util.Arrays;
+
+public class Main {
+    public static void main(String[] args) {
+        int[][] numbers = new int[2][3];
+        numbers[0][0]= 1;
+        System.out.println(Arrays.deepToString(numbers));
+
+    }
+}
+```
+**Output:**
+```sh
+[[1, 0, 0], [0, 0, 0]]
+```
+**Object for Two Dimentional Array is:**
+```java
+Arrays.deepToString(array_name);
+```
+
+## Constants
+```java
+public class Main {
+    public static void main(String[] args) {
+       final float PI = 3.1416F;
+        // after writing final we cannot chnage the variable's value
+
+    }
+}
+```
+1. **after writing final we cannot chnage the variable's value because it becomes a constant.**
+2. **By convention we use all capital letters for constant.**
+
+## Arithmatic Expression
+1. **In java the arithmatic operations are as like C programming**
+2. **For having the value of division we often need to use typecasting**
+
+**Example:**
+```java
+public class Main {
+    public static void main(String[] args) {
+        double divisibleValue = (double)10/(double)3;
+        System.out.println(divisibleValue);
+    }
+}
+```
+**Output:**
+```sh
+3.3333333333333335
+```
+3. **We have incremental and decremental operator as well**
+    
+![alt text](image-4.png)
+
+## Implicit Casting
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Implicit Casting
+        // byte > short > int > long
+        short x=5;
+        int y = x+9;
+
+        System.out.println(y);
+    }
+}
+```
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Implicit Casting
+        // byte > short > int > long
+        double x=5.3;
+        double y = x+9;
+
+        System.out.println(y);
+    }
+}
+```
+**->** **Java will be automatically cast the int 9 to double**
+**->** **byte > short > int > long > float > double**
+**->** **When there is a chance of data loss implicit casting can be used.** 
+
+```java
+public class Main {
+    public static void main(String[] args) {
+        // Implicit Casting
+        // byte > short > int > long
+        short x=5;
+        int y = (int)x+9;
+
+        System.out.println(y);
+    }
+}
 ```
