@@ -603,3 +603,228 @@ public class Main{
 ```sh
 56%
 ```
+## Reading Input
+- **We use Scanner to take input from a user. We can also give the scanner an input stream so that we can read data from any source.**
+- **Which type of data we are going to read is determined by the "next" method call on this object.**
+
+```java
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your age:");
+        byte myAge = scanner.nextByte();
+        System.out.println("You are "+ myAge);
+    }
+}
+```
+```sh
+Enter your age:30
+You are 30
+```
+1. **We are not using println because println cause extra line after its being executed. For avoiding that extra line we are using print**  
+
+```java
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Enter your Name:");
+        String myName = scanner.nextLine().trim().toUpperCase();
+        System.out.println("You are "+ myName);
+    }
+}
+```
+```sh
+Enter your Name:   Mian AL RUhanyat
+You are MIAN AL RUHANYAT
+```
+2. **Here, we are using nextLine to store the whole value of the string as well as the white space in between those two strings.**
+3. **We are also chaining the methods together so that it will be easier for us to read and understand this code.**
+
+## Project-1
+#### Mortgage Calculator
+
+![Basic Rules](image-5.png)
+
+```java
+
+import java.text.NumberFormat;
+import java.util.Scanner;
+
+public class Main{
+    public static void main(String[] args) {
+        final byte Months_In_A_Year = 12;
+        final byte Percent = 100;
+        Scanner scanf = new Scanner(System.in);
+        System.out.println("----------------Mortgage Calculator-----------------");
+        System.out.print("Principle:");
+        long Principle = scanf.nextLong();
+        // System.out.println(Principle);
+        System.out.print("Annual Interest Rate:");
+        float annualInterestRate = scanf.nextFloat();
+        // System.out.println(annualInterestRate);
+        System.out.print("Period:");
+        float Period = scanf.nextByte();
+        //Calculation
+        annualInterestRate= annualInterestRate/Percent/Months_In_A_Year ;
+        Period = Period*Months_In_A_Year;
+
+        double calculatingAnnualRate = (annualInterestRate*Math.pow(1+annualInterestRate,Period))/(Math.pow(1+annualInterestRate,Period)-1);
+        double Mortgage = Principle*calculatingAnnualRate;
+        NumberFormat currency = NumberFormat.getCurrencyInstance();
+        String result = currency.format(Mortgage);
+        System.out.println("----------------------------------------------------");
+        System.out.println("Mortgage:"+result);
+        System.out.println("----------------------------------------------------");
+    }
+
+}
+```
+```sh
+----------------Mortgage Calculator-----------------
+Principle:100000
+Annual Interest Rate:3.90
+Period:30
+----------------------------------------------------
+Mortgage:$471.67
+----------------------------------------------------
+```
+
+# Control Flow
+![alt text](image-6.png)
+
+## Logical Operators
+```java
+public class Main{
+    public static void main(String[] args) {
+        boolean highIncome = true;
+        boolean highCredit = true;
+        boolean isEligible = highCredit || highIncome ;
+        System.out.println(isEligible);
+    }
+}
+```
+**Eligible for loan**
+```java
+public class Main{
+    public static void main(String[] args) {
+        boolean highIncome = false;
+        boolean highCredit = true;
+        boolean hasCriminalRecords = false;
+        boolean isEligible = (highCredit || highIncome) && !hasCriminalRecords ;
+        System.out.println(isEligible);
+    }
+}
+```
+
+## Simplifying If-Else
+
+```java
+public class Main{
+    public static void main(String[] args) {
+        int income = 120_000;
+        boolean hasHighIncome = false;
+        if(income>100_000)
+            hasHighIncome=true;
+        else
+            hasHighIncome= false;
+
+        System.out.println(hasHighIncome);
+    }
+}
+```
+##### *Professional Way to use Condition*
+```java
+public class Main{
+    public static void main(String[] args) {
+        int income = 120_000;
+        boolean hasHighIncome = (income>100_000);
+        System.out.println(hasHighIncome);
+    }
+}
+```
+## The Ternary Operator
+
+```java
+public class Main{
+    public static void main(String[] args) {
+        int income = 120_000;
+        String className = (income>100_000) ? "First":"Economy";
+        System.out.println(className);
+    }
+}
+```
+## Interview Question: FizzBuzz
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanf = new Scanner(System.in);
+        System.out.print("Number:");
+        int number = scanf.nextInt();
+        if(number%3==0 && number%5==0)
+            System.out.println("FizzBuzz");
+        else if(number%5==0)
+            System.out.println("Buzz");
+        else if (number%3==0)
+            System.out.println("Fizz");
+        else
+            System.out.println(number);
+
+
+    }
+}
+```
+- **We could use nested condition here but avoiding nested is a good practice**
+
+## While Loops
+
+```java
+import java.util.Scanner;
+
+public class Main {
+    public static void main(String[] args) {
+        Scanner scanf = new Scanner(System.in);
+        String input = "";
+        while(!input.equals("quit")){
+            System.out.print("Input:");
+            input= scanf.nextLine();
+            System.out.println(input.toLowerCase());
+
+        }
+    }
+}
+```
+```sh
+Input:hello world
+hello world
+Input:how are you>
+how are you>
+Input:quit
+quit
+
+Process finished with exit code 0
+```
+
+## For-Each Loop
+```java
+public class Main {
+    public static void main(String[] args){
+        String[] Array = {"Apple","Komola","Anggur","Kola"};
+        //Normal For loop
+        for(int i =0;i<Array.length;i++)
+            System.out.println(Array[i]);
+        // For each Loop
+        for(String fruit:Array)
+            System.out.println(fruit);
+
+    }
+}
+```
+**Limitations of For-each loop**  
+- We can go only forward . we can't come backward 
+- We don't have the access of index 
