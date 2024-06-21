@@ -542,7 +542,8 @@ public class Main{
             public class Main{
     public static void main(String[] args){
 
-        int  result =(int)Math.round(Math.random()*100); // we are using implicit int for casting the double to int
+        int  result =(int)Math.round(Math.random()*100); // It will give the larget nearest round value
+// we are using implicit int for casting the double to int
         System.out.println(result);
     }
 }
