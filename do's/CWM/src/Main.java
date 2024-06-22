@@ -1,11 +1,12 @@
-import java.util.Arrays;
+import java.util.Random;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
-        int[] numbers = {2,3,4,5,6,4,5,34,2};
-        Arrays.sort(numbers);
-        System.out.println(numbers.length);
-        System.out.println(Arrays.toString(numbers));
+        Scanner scanf = new Scanner(System.in);
+        System.out.print("Please Enter your title:");
+        String scanfValueStored = scanf.nextLine().trim().toLowerCase();
 
+        System.out.println(scanfValueStored);
     }
-}
+} 
