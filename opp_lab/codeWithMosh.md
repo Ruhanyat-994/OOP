@@ -1,7 +1,9 @@
 # Various types in Java:
 
-![alt text](image.png)
-![alt text](image-1.png)
+![image](https://github.com/Ruhanyat-994/OOP/assets/110297704/005c5a40-3c6c-447d-8988-641db7c835d2)
+
+![image-1](https://github.com/Ruhanyat-994/OOP/assets/110297704/ea7ac071-ab36-4ea1-82e2-53192d10af97)
+
 
 - If we want to use long you have to use a L at the last of the value because java see's long as integer
 
@@ -55,7 +57,8 @@ public class Main {
 1
 ```
 #### Reference
-![alt text](image-2.png)  
+![image-2](https://github.com/Ruhanyat-994/OOP/assets/110297704/c4b9d433-6264-49cb-b843-6fd037a23f22)
+
 
 
 
@@ -71,7 +74,8 @@ public class Main {
     }
 }
 ```
-![alt text](image-3.png)
+![image-3](https://github.com/Ruhanyat-994/OOP/assets/110297704/c0498b33-36ca-467a-b9af-18399b169cf7)
+
 ```java
 import java.awt.*;
 
@@ -430,7 +434,8 @@ public class Main {
 ```
 3. **We have incremental and decremental operator as well**
     
-![alt text](image-4.png)
+![image-4](https://github.com/Ruhanyat-994/OOP/assets/110297704/a7888905-f431-4c5d-b19c-6cef9166d558)
+
 
 ## Implicit Casting
 ```java
@@ -648,7 +653,8 @@ You are MIAN AL RUHANYAT
 ## Project-1
 #### Mortgage Calculator
 
-![Basic Rules](image-5.png)
+![image-5](https://github.com/Ruhanyat-994/OOP/assets/110297704/42d197f8-07bf-4370-9b9c-7263fdeafbcd)
+
 
 ```java
 
@@ -695,7 +701,8 @@ Mortgage:$471.67
 ```
 
 # Control Flow
-![alt text](image-6.png)
+![image-6](https://github.com/Ruhanyat-994/OOP/assets/110297704/79a34c2a-caf6-4087-82b4-ee198b31b74f)
+
 
 ## Logical Operators
 ```java
