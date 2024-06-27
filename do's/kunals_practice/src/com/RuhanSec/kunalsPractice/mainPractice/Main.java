@@ -1,4 +1,4 @@
-package com.RuhanSec.kunalsPractice.package3;
+package com.RuhanSec.kunalsPractice.mainPractice;
 // we don't need to import the package of Human because its in the dame package!
 // If we use human into another packages main we would import it there
 

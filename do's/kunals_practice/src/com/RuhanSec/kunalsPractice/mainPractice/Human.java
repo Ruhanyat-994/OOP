@@ -1,4 +1,4 @@
-package com.RuhanSec.kunalsPractice.package3;
+package com.RuhanSec.kunalsPractice.mainPractice;
 
 public class Human {
     int age;

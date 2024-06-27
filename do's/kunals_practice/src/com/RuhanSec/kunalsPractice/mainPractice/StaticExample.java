@@ -1,4 +1,4 @@
-package com.RuhanSec.kunalsPractice.package3;
+package com.RuhanSec.kunalsPractice.mainPractice;
 // Initialization of static variable
 
 public class StaticExample {
