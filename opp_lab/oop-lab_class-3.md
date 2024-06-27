@@ -142,6 +142,11 @@ public class Main{
     }
 }
 ```
+- This code will calculate the sum of every row and print them . Then it will take the value for next row and also print them as well.
+
+##### Column Sum
+```java
+```
 
 #### Find Maximum Value for every row and column
 ```java
