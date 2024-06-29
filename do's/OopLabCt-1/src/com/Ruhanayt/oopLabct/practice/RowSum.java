@@ -29,12 +29,13 @@ public class RowSum {
                 sum += functionalArray[i][j];
 
             }
-            System.out.print("The sum of row "+(i+1)+" is: ");
 
-            System.out.println(sum);
         }
         System.out.println(Arrays.deepToString(functionalArray));
-        
+        //System.out.print("The sum of row "+(i+1)+" is: ");
+
+        System.out.println(sum);
+
 
     }
 }
