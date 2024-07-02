@@ -219,11 +219,12 @@ public class lab_class1 {
 
         int[] array = {2,3,9,8,13,1,5,19,15,0,4};
 
+        int max = array[0];
         for(int i=0;i<array.length;i++)
         {
-            if(array[1]>array[i])
+            if(array[i] > max)
             {
-                 System.out.println(array);
+                 max = array[i];
 
             }
             else
