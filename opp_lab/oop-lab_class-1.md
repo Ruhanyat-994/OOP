@@ -219,7 +219,7 @@ public class lab_class1 {
 
         int[] array = {2,3,9,8,13,1,5,19,15,0,4};
 
-        for(int i=0;i<11;i++)
+        for(int i=0;i<array.length;i++)
         {
             if(array[1]>array[i])
             {
