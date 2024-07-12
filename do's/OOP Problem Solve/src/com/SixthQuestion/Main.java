@@ -13,7 +13,7 @@ public class Main {
         for(Person person: people)
         {
             person.disp();
-            
+
             System.out.println("---------------------------");
         }
 
