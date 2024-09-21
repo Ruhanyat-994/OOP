@@ -1,4 +1,4 @@
-
+        
 ### Problem 1: Vehicle Inheritance
 
 Define a class `Vehicle` with properties `brand` and `year` of manufacture. Derive two classes `Car` and `Motorcycle` from `Vehicle`. Each subclass should have an additional property (`numDoors` for `Car` and `hasSideCar` for `Motorcycle`). Implement a method `display()` in each class to print all relevant details.
