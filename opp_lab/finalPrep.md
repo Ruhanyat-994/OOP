@@ -20,38 +20,40 @@ public class Main {
 
 ## finding pattern through file read
 ```java
-import java.io.*;
+import java.io.BufferedReader;
+import java.io.FileReader;
+import java.io.IOException;
+import java.util.Scanner;
 
 public class Main {
     public static void main(String[] args) {
+        Scanner scan = new Scanner(System.in);
+        System.out.println("Enter the Pattern you want to check");
+        String searchString = scan.nextLine().toLowerCase();
         try {
-            // Create a BufferedReader to read the file
             BufferedReader reader = new BufferedReader(new FileReader("Hello.txt"));
+            String line;
 
-            String line;  // Variable to hold each line of the file
-            String searchString = "hello world"; // The pattern/string to search for
+
             boolean isPatternFound = false;
 
-            // Read the file line by line
-            while ((line = reader.readLine()) != null) {
-                // Check if the current line contains the string/pattern
-                if (line.contains(searchString)) {
-                    System.out.println("Pattern found: " + searchString);
+            while ((line = reader.readLine())!= null){
+                if(line.contains(searchString)){
+                    System.out.println("Your Pattern is : "+searchString);
                     isPatternFound = true;
-                    break; // Stop searching once the pattern is found
+                    break;
                 }
             }
-
-            if (!isPatternFound) {
-                System.out.println("Pattern not found.");
+            if(!isPatternFound){
+                System.out.println("Pattern not found");
             }
-
-            // Close the BufferedReader to release resources
             reader.close();
-        } catch (IOException e) {
+        }catch (IOException e){
             e.printStackTrace();
+        }finally {
+            System.out.println("Your Pattern is in the file!");
         }
+        scan.close();
     }
 }
-
 ```
