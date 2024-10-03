@@ -83,3 +83,40 @@ public class Main {
     }
 }
 ```
+## Task-1
+**Assume a file “input.txt” contains comma-separated numbers. Write an application to read the
+numbers from the “input.txt” file, parse those numbers, calculate the summation, and then write the result to a different file name “output.txt”.**
+
+```java
+import java.io.*;
+
+public class Main {
+    public static void main(String[] args) {
+
+        try {
+            FileWriter writeFile = new FileWriter("input.txt");
+            writeFile.write("15,45,65,45,34");
+            writeFile.close();
+            BufferedReader reader = new BufferedReader(new FileReader("input.txt"));
+            String line = reader.readLine();
+            reader.close();
+
+            if(line != null ){
+                String[] numbers = line.split(",");
+                double sum =0;
+                for(String number:numbers){
+                    sum+= Double.parseDouble(number.trim());
+                }
+                FileWriter writingOutput = new FileWriter("Output.txt");
+                writingOutput.write("The sum is : "+sum);
+                writingOutput.close();
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }catch (NumberFormatException e){
+            System.out.println("Invalid Number format in input file");
+        }
+
+    }
+}
+```
