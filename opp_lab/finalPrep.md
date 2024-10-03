@@ -57,3 +57,29 @@ public class Main {
     }
 }
 ```
+## File details
+```java
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        try {
+            File file = new File("Hello.txt");
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            String line;
+            while ((line = reader.readLine())!= null){
+                System.out.println("File name: " + file.getName());
+                System.out.println("Absolute path: " + file.getAbsolutePath());
+                System.out.println("Writeable: " + file.canWrite());
+                System.out.println("Readable " + file.canRead());
+                System.out.println("File size in bytes " + file.length());
+            }
+        }catch (IOException e){
+            e.printStackTrace();
+        }
+    }
+}
+```
