@@ -1,21 +1,3 @@
-## Matching strings (case_insensitive)
-```java
-import java.util.regex.Matcher;
-import java.util.regex.Pattern;
-
-public class Main {
-    public static void main(String[] args) {
-        Pattern pattern = Pattern.compile("Hello World",Pattern.CASE_INSENSITIVE);
-        Matcher matcher = pattern.matcher("This is From Hello world");
-        boolean matchFound = matcher.find();
-        if(matchFound){
-            System.out.println("Match Found");
-        }else{
-            System.out.println("Match not found");
-        }
-    }
-}
-```
 
 
 ## finding pattern through file read
