@@ -175,4 +175,35 @@ public class Main {
 }
 ```
 
+## Splitting string
+```java
+import java.io.BufferedReader;
+import java.io.File;
+import java.io.FileReader;
+import java.io.IOException;
+
+public class Main {
+    public static void main(String[] args) {
+        File file = new File("Hello.txt");
+
+        try {
+            BufferedReader reader = new BufferedReader(new FileReader(file));
+            StringBuilder content = new StringBuilder();
+            String line;
+            boolean isPatternFound = false;
+
+            while((line = reader.readLine())!=null){
+              String[] carier = line.split(" , ");
+                for(String value : carier){
+                    System.out.print(value);
+                }
+            }
+            reader.close();
+        }catch (IOException e ){
+            e.printStackTrace();
+        }
+    }
+}
+```
+
 
