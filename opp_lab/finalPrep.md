@@ -120,3 +120,77 @@ public class Main {
     }
 }
 ```
+
+## ArrayList<>
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cars = new ArrayList<String>();
+
+        cars.add("Volvo");
+        cars.add("ferari");
+        cars.add("lexus");
+        cars.add("toyota");
+        cars.add(0,"majda");
+        cars.set(0,"BMW");
+        System.out.println(cars);
+        System.out.println(cars.get(3)); // get
+        System.out.println(cars.size()); // Size
+
+
+    }
+}
+```
+## Looping through arraylist
+```java
+import java.util.ArrayList;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cars = new ArrayList<String>();
+
+        cars.add("Volvo");
+        cars.add("ferari");
+        cars.add("lexus");
+        cars.add("toyota");
+      for(int i = 0; i<cars.size(); i++){
+          System.out.println(cars.get(i));
+      }
+      // same thing using for each loop
+      for(String i : cars){
+          System.out.println(i);
+      }
+    }
+}
+```
+
+## Sorting ArrayList
+```java
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Collections;
+
+public class Main {
+    public static void main(String[] args) {
+        ArrayList<String> cars = new ArrayList<String>();
+
+
+        cars.add("Volvo");
+        cars.add("ferari");
+        cars.add("BMW");
+        cars.add("Ford");
+        cars.add("Mazda");
+        cars.add("lexus");
+        cars.add("toyota");
+        Collections.sort(cars);
+
+        for (String i : cars){
+            System.out.println(i);
+        }
+    }
+}
+```
+
+
