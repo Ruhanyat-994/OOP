@@ -205,5 +205,72 @@ public class Main {
     }
 }
 ```
+## String Related Problem {Ct marks calculation}
+```java
+import java.util.Scanner;
+
+public class Student {
+    private String name;
+    private int id;
+    private float cgpa;
+    private float totalCTMarks;
+
+    public Student(String name, int id, float cgpa){
+        this.name= name;
+        this.id = id;
+        this.cgpa=cgpa;
+
+    }
+
+    public void display(){
+        System.out.println("Name: "+name);
+        System.out.println("Id: "+id);
+        System.out.println("CGPA: "+cgpa);
+    }
+
+    public void calculate_marks(float[] ctmarks){
+        totalCTMarks=0;
+        float max1= Math.max(ctmarks[0],Math.max(ctmarks[1],ctmarks[2]));
+        float min1= Math.min(ctmarks[0],Math.min(ctmarks[1],ctmarks[2]));
+        float middle1 = ctmarks[0]+ctmarks[1]+ctmarks[2]-max1-min1;
+
+        float averageBestTwo = (max1+middle1)/2;
+        for (float mark: ctmarks){
+            totalCTMarks+= mark;
+
+        }
+        System.out.println("Total CT Marks: "+totalCTMarks);
+        System.out.println("Best One CT Mark: "+totalCTMarks);
+
+    }
+    import java.util.Scanner;
+
+    public class Main{
+        public static void main(String[] args) {
+            Scanner sc = new Scanner(System.in);
+            System.out.println("Enter student details (name, id, cgpa) separated by commas:");
+            String studentInput = sc.nextLine();
+            String[] studentDetails = studentInput.split(", ");
+            String name = studentDetails[0];
+            int id = Integer.parseInt(studentDetails[1]);
+            float cgpa = Float.parseFloat(studentDetails[2]);
+
+            System.out.println("Enter 3 CT marks separated by commas: ");
+            String ctInput = sc.nextLine();
+            String[] ctMarksInput = ctInput.split(", ");
+
+            float[] ctMarks = new float[3];
+            for (int i =0;i<3;i++){
+                ctMarks[i] = Float.parseFloat(ctMarksInput[i]);
+            }
+            Student student = new Student(name,id,cgpa);
+            student.display();
+            student.calculate_marks(ctMarks);
+        }
+    }
+
+}
+
+```
 
 
